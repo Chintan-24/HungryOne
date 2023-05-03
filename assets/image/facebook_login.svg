@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="315" height="55" viewBox="0 0 315 55">
+  <g id="facebook_login" transform="translate(-30 -528)">
+    <g id="Rectangle_" data-name="Rectangle " transform="translate(30 528)" fill="#367fc0" stroke="#367fc0" stroke-width="1">
+      <rect width="315" height="55" rx="27.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="314" height="54" rx="27" fill="none"/>
+    </g>
+    <text id="Login_with_Facebook" data-name="Login with Facebook" transform="translate(201.694 560)" fill="#fff" font-size="12" font-family="SegoeUI, Segoe UI" letter-spacing="0.02em"><tspan x="-56" y="0">Login with Facebook</tspan></text>
+    <g id="facebook-letter-logo" transform="translate(105 548)">
+      <path id="Facebook" d="M116.281,3.044V5.207H114.7V7.852h1.585v7.861h3.256V7.853h2.185s.2-1.268.3-2.655h-2.476V3.389a.768.768,0,0,1,.706-.634h1.774V0h-2.412C116.2,0,116.281,2.649,116.281,3.044Z" transform="translate(-114.696 -0.001)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
