@@ -62,7 +62,7 @@ const MegaHome = () => {
                 <View style={{width:'23%'}}>
                     <Image
                         style={styles.cateCard}
-                        source={require('../../assets/image/Italian.png')}
+                        source={require('../../assets/image/italian.png')}
                     />
                     <Text style={{fontWeight:600, textAlign:'center'}}>
                         Italian

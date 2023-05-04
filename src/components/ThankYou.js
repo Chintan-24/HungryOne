@@ -21,7 +21,7 @@ const ThankYou = () => {
                     Track My Order
                 </Text>
             </View>
-            <Text style={{fontSize:14,marginTop:20,textAlign:'center',fontWeight:700}} onPress={() => {navigation.navigate("Main")}}>
+            <Text style={{fontSize:14,marginTop:20,textAlign:'center',fontWeight:700}} onPress={() => {navigation.navigate("Home")}}>
                 Back to Home
             </Text>
 

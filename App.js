@@ -26,6 +26,7 @@ import InboxPg from './src/components/InboxPg';
 import OrdersPage from './src/components/OrdersPage';
 import CheckoutPg from './src/components/CheckoutPg';
 import ThankYou from './src/components/ThankYou';
+import { TouchableOpacity } from 'react-native-web';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -112,96 +113,116 @@ export default function App() {
         }}
         />
         <Stack.Screen name="Home" component={MegaHome}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={ ({navigation}) => 
+            ({
+            headerRight: () => (
+            <TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}>
+              <Image 
+                style={styles.cartLogo} 
+                source={require('./assets/image/shopping-cart.svg')}
+              />
+            </TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })
+        }
         />
         <Stack.Screen name="Menu" component={MenuPg}
-          options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+          options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="Offers" component={OffersPg}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="Profile" component={ProfilePg}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="More" component={MorePg}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="Desserts" component={Desserts}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="Notifications" component={NotificationPage}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="About Us" component={AboutUs}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="Payment Details" component={PaymentDetails}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="Orders" component={OrdersPage}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="Inbox" component={InboxPg}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="Order" component={ItemPg}
-          options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cartWhite.svg')}/>),
+          options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cartWhite.svg')}/></TouchableOpacity>),
             title:"",
             headerShown: true,
             headerTransparent: true,
@@ -210,23 +231,24 @@ export default function App() {
             color:'white',
           },
           headerTintColor: 'white'
-        }}
-        />
+          })}
+          />
         <Stack.Screen name="Checkout" component={CheckoutPg}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
+            headerRight: () => (<TouchableOpacity 
+              onPress={() => {navigation.navigate('Orders')}}><Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/></TouchableOpacity>),
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })}
         />
         <Stack.Screen name="Thank You" component={ThankYou}
-            options={{
-            headerRight: () => (<Image style={styles.cartLogo} source={require('./assets/image/shopping-cart.svg')}/>),
+            options={({navigation}) => ({
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
-        }}
+        })
+        }
         />
       </Stack.Navigator>
     </NavigationContainer>
