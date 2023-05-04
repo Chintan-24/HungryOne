@@ -1,7 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
 
 const SignupPage = () => {
+    const navigation = useNavigation();
     return (
     <View style={styles.container}>
         <Text style={styles.heading}>
@@ -46,19 +49,30 @@ const SignupPage = () => {
                 placeholder="Confirm Password"
             />
         </View>
-        <View style={styles.btnActive}>
+        <TouchableOpacity 
+            style={styles.btnActive} 
+            onPress={() => {navigation.navigate("Welcome1")}}
+        >
             <Text style={{color:'white'}}>
                 Sign Up
             </Text>
-        </View>
-        <View>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+            onPress={()=> {
+            navigation.navigate("Login")
+          }
+          }>
         <Text style={styles.signUpTxt}>
             Already have an Account? &nbsp;
-                <Text style={{color:'orange', fontWeight:700}}>
+                <Text 
+                    style={{color:'orange', fontWeight:700}} 
+                    onPress={() => {navigation.navigate("Login")}}
+                >
                     Login
                 </Text>
             </Text>
-        </View>
+        </TouchableOpacity>
     </View>  
     );
 }
@@ -67,9 +81,9 @@ const styles = StyleSheet.create({
     container:{
         width:'100%',
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#f8f8f8',
         alignItems:'center',
-        padding:15,
+        padding:10,
         paddingLeft:25,
         paddingRight:25
     },
@@ -78,7 +92,7 @@ const styles = StyleSheet.create({
         fontWeight:600,
         marginBottom:10,
         color:'#4A4B4D',
-        marginTop:25
+        marginTop:0
     },
     subHeading:{
         fontSize:14,
@@ -93,7 +107,7 @@ const styles = StyleSheet.create({
     txtInput:{
         backgroundColor:'#f2f2f2',
         width:'100%',
-        height:50,
+        height:45,
         borderRadius:30,
         justifyContent:'center',
         paddingLeft:20,
@@ -104,7 +118,7 @@ const styles = StyleSheet.create({
         width:'100%',
         textAlign:'center',
         justifyContent:'center',
-        height:50,
+        height:45,
         borderRadius:30,
         marginTop:25
       },

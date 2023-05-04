@@ -1,7 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 const Otppage = () => {
+const navigation = useNavigation();
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -37,26 +41,30 @@ const Otppage = () => {
             />
         </View>
         </View>
-        <View style={styles.btnActive}>
+        <TouchableOpacity style={styles.btnActive}
+            onPress={() => {navigation.navigate("New Password")}}    
+        >
             <Text style={{color:'white'}}>
                 Next
             </Text>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity
+            onPress={() => {navigation.navigate("Reset Password")}}    
+        >
         <Text style={styles.footTxt}>
             Didn't Receive? &nbsp;
                 <Text style={{color:'orange', fontWeight:700}}>
                     Click Here
                 </Text>
             </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     );
 }
 const styles = StyleSheet.create({
     container:{
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#f8f8f8',
       alignItems:'center',
       width:'100%',
       padding:15,
@@ -66,9 +74,9 @@ const styles = StyleSheet.create({
     heading:{
         fontSize:30,
         fontWeight:600,
-        marginBottom:10,
+        marginBottom:15,
         color:'#4A4B4D',
-        marginTop:25,
+        marginTop:10,
         textAlign:'center',
     },
     subHeading:{

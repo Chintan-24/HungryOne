@@ -1,21 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput,ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const MegaHome = () => {
+    const navigation = useNavigation();
+
     return (
     <View style={styles.container}>
-    <ScrollView  style={{padding:15,paddingLeft:25,paddingRight:25}}>
-        <View style={{marginTop:20,flex:1/20, flexDirection:'row',justifyContent:'space-between',width:'100%'}}>
-            <Text style={{fontSize:17}}>
-                Letest Offers
-            </Text>
-           
-            <Image
-                style={styles.cartIcon}
-                source={require('../../assets/image/shopping-cart.svg')}
-            />
-        </View>
-        <View style={{width:'100%',marginTop:40}}>
+    <ScrollView  style={{padding:15,paddingLeft:25,paddingRight:25, paddingBottom:50}}>
+        <View style={{width:'100%',marginTop:10}}>
             <Text style={{fontSize:12}}>
                 Find discounts, Offers special
             </Text>
@@ -69,6 +63,30 @@ const MegaHome = () => {
                 </View>
             </View>
     </ScrollView>
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:65,width:65,zIndex:222,bottom:42,left:147}}
+    onPress={() => {navigation.navigate("Home")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:14,}}
+    onPress={() => {navigation.navigate("Menu")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:85,}}
+    onPress={() => {navigation.navigate("Offers")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:233,}}
+    onPress={() => {navigation.navigate("Profile")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:300,}}
+    onPress={() => {navigation.navigate("More")}}    
+    >
+    </TouchableOpacity>
         <View style={{position:'fixed', bottom:0}}>
             <Image
             style={styles.bottomBar}
@@ -82,7 +100,7 @@ const MegaHome = () => {
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#f8f8f8',
         //   alignItems:'center',
         width:'100%',
     },
@@ -103,7 +121,6 @@ const styles = StyleSheet.create({
         width:410,
         right:28,
         height:110,
-        zIndex:111,
     },
     cartIcon:{
         width:20,

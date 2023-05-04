@@ -1,7 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput,ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const ThankYou = () => {
+    const navigation = useNavigation();   
+    
     return (
       <View style={styles.container}>
             <Image
@@ -17,7 +21,7 @@ const ThankYou = () => {
                     Track My Order
                 </Text>
             </View>
-            <Text style={{fontSize:14,marginTop:20,textAlign:'center',fontWeight:700}}>
+            <Text style={{fontSize:14,marginTop:20,textAlign:'center',fontWeight:700}} onPress={() => {navigation.navigate("Main")}}>
                 Back to Home
             </Text>
 
@@ -30,7 +34,7 @@ const styles = StyleSheet.create({
     container:{
       width:'100%',
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#f8f8f8',
       alignItems:'center',
       padding:15,
       paddingLeft:25,

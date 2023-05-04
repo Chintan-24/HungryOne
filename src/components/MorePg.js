@@ -1,20 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput,ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const MorePg = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
 
         <ScrollView  style={{padding:15,paddingLeft:25,paddingRight:25}}>
-            <View style={{marginTop:20,flex:1/20, flexDirection:'row',justifyContent:'space-between',width:'100%'}}>
-                <Text style={{fontSize:17}}>
-                    More
-                </Text>
-                <Image
-                    style={styles.cartIcon}
-                    source={require('../../assets/image/shopping-cart.svg')}
-                />
-            </View>
             <View style={styles.menuWrapper1}>
                 <View style={{flex:1}}>
                 <View style={{backgroundColor:'#e5e5e5',borderRadius:'50%',width:50,height:50, top:10,left:10}}>
@@ -25,9 +20,9 @@ const MorePg = () => {
             />
                 </View>
                 </View>
-                <View style={styles.menuBar}>  
+                <TouchableOpacity style={styles.menuBar} onPress={() => {navigation.navigate("Payment Details")}}>  
                     <Text style={styles.menuTxt}>Payment Details</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={{flex:1}}>
                 <Image
                     style={styles.sideArrow}
@@ -46,9 +41,9 @@ const MorePg = () => {
                     
                 </View>
                 </View>
-                <View style={styles.menuBar}>  
+                <TouchableOpacity style={styles.menuBar}  onPress={() => {navigation.navigate("Orders")}}>  
                     <Text style={styles.menuTxt}>My Orders</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={{flex:1}}>
                 <Image
                     style={styles.sideArrow}
@@ -67,13 +62,16 @@ const MorePg = () => {
             />
                 </View>
                 </View>
-                <View style={styles.menuBar}>  
+                <TouchableOpacity style={styles.menuBar} 
+                onPress={() => {navigation.navigate("Notifications")}}    
+
+                >  
                     <Text style={styles.menuTxt}>Notifications</Text>
                     <Image
                         style={styles.notifNum}
                         source={require('../../assets/image/notifNum.svg')}
                     />
-                </View>
+                </TouchableOpacity>
                 <View style={{flex:1}}>
                 <Image
                     style={styles.sideArrow}
@@ -92,9 +90,9 @@ const MorePg = () => {
             />
                 </View>
                 </View>
-                <View style={styles.menuBar}>  
+                <TouchableOpacity style={styles.menuBar}  onPress={() => {navigation.navigate("Inbox")}}>  
                     <Text style={styles.menuTxt}>Inbox</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={{flex:1}}>
                 <Image
                     style={styles.sideArrow}
@@ -112,9 +110,9 @@ const MorePg = () => {
             />
                 </View>
                 </View>
-                <View style={styles.menuBar}>  
+                <TouchableOpacity style={styles.menuBar}  onPress={() => {navigation.navigate("About Us")}}>  
                     <Text style={styles.menuTxt}>About Us</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={{flex:1}}>
                 <Image
                     style={styles.sideArrow}
@@ -124,7 +122,30 @@ const MorePg = () => {
             </View>
 
         </ScrollView>
+        <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:65,width:65,zIndex:222,bottom:42,left:147}}
+    onPress={() => {navigation.navigate("Home")}}    
+    >
+    </TouchableOpacity>
 
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:14,}}
+    onPress={() => {navigation.navigate("Menu")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:85,}}
+    onPress={() => {navigation.navigate("Offers")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:233,}}
+    onPress={() => {navigation.navigate("Profile")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:300,}}
+    onPress={() => {navigation.navigate("More")}}    
+    >
+    </TouchableOpacity>
             <View style={{position:'fixed', bottom:0}}>
                 <Image
                 style={styles.bottomBar}
@@ -139,7 +160,7 @@ const MorePg = () => {
     const styles = StyleSheet.create({
         container:{
             flex: 1,
-            backgroundColor: '#fff',
+            backgroundColor: '#f8f8f8',
             //   alignItems:'center',
             width:'100%',
         },
@@ -147,10 +168,9 @@ const MorePg = () => {
             top:1,
             // padding:0,
             // margin:0,
-            width:400,
-            right:20,
+            width:410,
+            right:28,
             height:110,
-            zIndex:111,
         },
         cartIcon:{
             width:20,
@@ -190,7 +210,7 @@ const MorePg = () => {
             flexDirection:'row', 
             justifyContent: 'space-between', 
             alignContent:'stretch', 
-            marginTop:50,
+            marginTop:10,
             backgroundColor:'#f4f4f4',
             borderRadius:10,
             width:280,

@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput,ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const MegaHome = () => {
+    const navigation = useNavigation();
+
     return (
     <View style={styles.container}>
-    <ScrollView  style={{padding:15,paddingLeft:25,paddingRight:25}}>
-        <View style={{marginTop:20,flex:1/20, flexDirection:'row',justifyContent:'space-between',width:'100%'}}>
+    <ScrollView  style={{marginBottom:45,paddingLeft:25,paddingRight:25}}>
+        {/* <View style={{marginTop:20,flex:1/20, flexDirection:'row',justifyContent:'space-between',width:'100%'}}>
             <Text>
                 Good Morning CB!
             </Text>
@@ -13,8 +17,8 @@ const MegaHome = () => {
                 style={styles.cartIcon}
                 source={require('../../assets/image/shopping-cart.svg')}
             />
-        </View>
-        <View style={{width:'100%',marginTop:30}}>
+        </View> */}
+        <View style={{width:'100%',marginTop:20}}>
             <Text style={{color:'#d5d5d5'}}>
                 Delivering to
             </Text>
@@ -93,7 +97,7 @@ const MegaHome = () => {
                         View all
                     </Text> 
                     </View>
-                    <View style={styles.restaurentCard}>
+                    <TouchableOpacity style={styles.restaurentCard} onPress={() => {navigation.navigate("Order")}}>
                         <Image
                             style={styles.resCardImg}
                             source={require('../../assets/image/pizza1.jpg')}
@@ -103,7 +107,7 @@ const MegaHome = () => {
                             style={styles.resCardDesc}
                             source={require('../../assets/image/starNdDesc.svg')}
                         />
-                    </View>
+                    </TouchableOpacity>
                     <View style={styles.restaurentCard}>
                         <Image
                             style={styles.resCardImg}
@@ -207,6 +211,31 @@ const MegaHome = () => {
                 </View>
             </View>
     </ScrollView>
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:65,width:65,zIndex:222,bottom:42,left:147}}
+    onPress={() => {navigation.navigate("Home")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:14,}}
+    onPress={() => {navigation.navigate("Menu")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:85,}}
+    onPress={() => {navigation.navigate("Offers")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:233,}}
+    onPress={() => {navigation.navigate("Profile")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:300,}}
+    onPress={() => {navigation.navigate("More")}}    
+    >
+    </TouchableOpacity>
+
         <View style={{position:'fixed', bottom:0}}>
             <Image
             style={styles.bottomBar}
@@ -220,7 +249,7 @@ const MegaHome = () => {
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#f8f8f8',
         //   alignItems:'center',
         width:'100%',
     },
@@ -228,10 +257,9 @@ const styles = StyleSheet.create({
         top:1,
         // padding:0,
         // margin:0,
-        width:400,
-        right:20,
+        width:410,
+        right:28,
         height:110,
-        zIndex:111,
     },
     cartIcon:{
         width:20,

@@ -1,7 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 const NewPwd = () => {
+    const navigation = useNavigation();
+
     return (
       <View style={styles.container}>
       <Text style={styles.heading}>
@@ -22,11 +27,13 @@ const NewPwd = () => {
                 placeholder="Confirm Password"
             />
         </View>
-        <View style={styles.btnActive}>
+        <TouchableOpacity style={styles.btnActive}
+            onPress={() => {navigation.navigate("Welcome1")}}    
+        >
             <Text style={{color:'white'}}>
                 Next
             </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     );
 }
@@ -34,7 +41,7 @@ const NewPwd = () => {
 const styles = StyleSheet.create({
     container:{
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#f8f8f8',
       alignItems:'center',
       width:'100%',
       padding:15,
@@ -46,7 +53,7 @@ const styles = StyleSheet.create({
         fontWeight:600,
         marginBottom:10,
         color:'#4A4B4D',
-        marginTop:25
+        marginTop:10
     },
     subHeading:{
         fontSize:14,

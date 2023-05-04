@@ -1,20 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput,ScrollView,borderBottom } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const PaymentDetails = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
 
         <ScrollView  style={{padding:15,paddingLeft:25,paddingRight:25}}>
-            <View style={{marginTop:20,flex:1/20, flexDirection:'row',justifyContent:'space-between',width:'100%'}}>
-                <Text style={{fontSize:17}}>
-                    Payment Details
-                </Text>
-                <Image
-                    style={styles.cartIcon}
-                    source={require('../../assets/image/shopping-cart.svg')}
-                />
-            </View>
             <Text style={styles.smallHead}>Customize Your payment method</Text>
             <View style={styles.PaymentCard}>
                 <View style={styles.cardLines}>
@@ -53,7 +48,30 @@ const PaymentDetails = () => {
                 </Text>
                 </View>
         </ScrollView>
+        <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:65,width:65,zIndex:222,bottom:42,left:147}}
+    onPress={() => {navigation.navigate("Home")}}    
+    >
+    </TouchableOpacity>
 
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:14,}}
+    onPress={() => {navigation.navigate("Menu")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:85,}}
+    onPress={() => {navigation.navigate("Offers")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:233,}}
+    onPress={() => {navigation.navigate("Profile")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:300,}}
+    onPress={() => {navigation.navigate("More")}}    
+    >
+    </TouchableOpacity>
             <View style={{position:'fixed', bottom:0}}>
                 <Image
                 style={styles.bottomBar}
@@ -68,7 +86,7 @@ const PaymentDetails = () => {
     const styles = StyleSheet.create({
         container:{
             flex: 1,
-            backgroundColor: '#fff',
+            backgroundColor: '#f8f8f8',
             //   alignItems:'center',
             width:'100%',
         },
@@ -76,10 +94,9 @@ const PaymentDetails = () => {
             top:1,
             // padding:0,
             // margin:0,
-            width:400,
-            right:20,
-            height:110,
-            zIndex:111,
+            width:410,
+        right:28,
+        height:110,
         },
         cartIcon:{
             width:20,
@@ -88,7 +105,7 @@ const PaymentDetails = () => {
         smallHead:{
             fontWeight:700,
             marginBottom:5,
-            marginTop:40,
+            marginTop:10,
             borderBottomColor: '#c2c2c2',
             borderBottomWidth: 1,
             paddingBottom: 10,

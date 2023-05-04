@@ -1,17 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput,ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const CheckoutPg = () => {
+    const navigation = useNavigation();
+
     return (
+        
         <View style={styles.container}>
 
         <ScrollView  style={{padding:15,paddingLeft:25,paddingRight:25}}>
-            <View style={{marginTop:20,flex:1/20, flexDirection:'row',justifyContent:'space-between',width:'100%'}}>
-                <Text style={{fontSize:18}}>
-                    Checkout
-                </Text>
-            </View>
-            <View style={{marginTop:40}}>
+            <View style={{marginTop:10}}>
                 <Text>Delivery Address</Text>
                 <View style={{marginTop:20,flexDirection:'row',justifyContent:"space-between"}}>
                     <Text style={{fontWeight:700}}>A/525, Atlantis-x, Vadodara, GJ</Text>
@@ -37,21 +37,50 @@ const CheckoutPg = () => {
                 <Text style={{fontWeight:700,fontSize:13}}>Discount</Text>
                 <Text style={{color:'orange',fontWeight:700,fontSize:13}}>-₹ 9</Text>
             </View>
+            <Text style={{
+                        borderBottomColor: '#e2e2e2',
+                        borderBottomWidth: 1,
+                        paddingBottom: 10,                            
+            }}
+            />
 
-            <View style={{marginTop:30,flexDirection:'row',justifyContent:"space-between"}}>
+            <View style={{marginTop:10,flexDirection:'row',justifyContent:"space-between"}}>
                 <Text style={{fontWeight:700}}>Total</Text>
                 <Text style={{color:'orange',fontWeight:700}}>₹ 905</Text>
             </View>
 
-            <View style={styles.btnActive}>
+            <TouchableOpacity style={styles.btnActive} onPress={() => {navigation.navigate("Thank You")}}>
                 <Text style={{color:'white'}}>
                     Send Order
                 </Text>
-            </View>
+            </TouchableOpacity>
             
 
         </ScrollView>
+        <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:65,width:65,zIndex:222,bottom:42,left:147}}
+    onPress={() => {navigation.navigate("Home")}}    
+    >
+    </TouchableOpacity>
 
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:14,}}
+    onPress={() => {navigation.navigate("Menu")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:85,}}
+    onPress={() => {navigation.navigate("Offers")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:233,}}
+    onPress={() => {navigation.navigate("Profile")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:300,}}
+    onPress={() => {navigation.navigate("More")}}    
+    >
+    </TouchableOpacity>
             <View style={{position:'fixed', bottom:0}}>
                 <Image
                 style={styles.bottomBar}
@@ -66,7 +95,7 @@ const CheckoutPg = () => {
     const styles = StyleSheet.create({
         container:{
             flex: 1,
-            backgroundColor: '#fff',
+            backgroundColor: '#f8f8f8',
             //   alignItems:'center',
             width:'100%',
         },
@@ -74,10 +103,9 @@ const CheckoutPg = () => {
             top:1,
             // padding:0,
             // margin:0,
-            width:400,
-            right:20,
-            height:110,
-            zIndex:111,
+            width:410,
+        right:28,
+        height:110,
         },
         orderIcon:{
             width:90,

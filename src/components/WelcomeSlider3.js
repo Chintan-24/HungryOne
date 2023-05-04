@@ -1,7 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 const WelcomeSlider3 = () => {
+    const navigation = useNavigation();
     return (
       <View style={styles.container}>
             <Image
@@ -29,11 +33,13 @@ const WelcomeSlider3 = () => {
                 <Text style={styles.textSubHead}>
                     Real time tracking of your food on the app once you placed order
                 </Text>
-                <View style={styles.btnActive}>
+                <TouchableOpacity style={styles.btnActive}
+                  onPress={() => {navigation.navigate("Home")}}  
+                >
                     <Text style={{color:'white'}}>
                         Next
                     </Text>
-                </View>
+                </TouchableOpacity>
             </View>
       </View>
     );
@@ -42,7 +48,7 @@ const WelcomeSlider3 = () => {
 const styles = StyleSheet.create({
     container:{
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#f8f8f8',
       alignItems:'center',
       width:'100%',
       padding:15,

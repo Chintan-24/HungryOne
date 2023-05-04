@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const WelcomeSlider1 = () => {
+    const navigation = useNavigation();
+
     return (
       <View style={styles.container}>
             <Image
                 style={styles.mainImageFill}
-                source={require('../../assets/image/foodGrp.svg')}
+                source={require('../../assets/image/Live_tracking.svg')}
             />
             <View style={styles.scroll}>
                 <Image
@@ -29,11 +33,12 @@ const WelcomeSlider1 = () => {
                 <Text style={styles.textSubHead}>
                     Discover the best food over from 1,000 resturants and fast delivery to your doorstep
                 </Text>
-                <View style={styles.btnActive}>
+                <TouchableOpacity style={styles.btnActive}
+                  onPress={() => {navigation.navigate("Welcome2")}}  >
                     <Text style={{color:'white'}}>
                         Next
                     </Text>
-                </View>
+                </TouchableOpacity>
             </View>
       </View>
     );
@@ -42,7 +47,7 @@ const WelcomeSlider1 = () => {
 const styles = StyleSheet.create({
     container:{
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#f8f8f8',
       alignItems:'center',
       width:'100%',
       padding:15,
@@ -50,17 +55,18 @@ const styles = StyleSheet.create({
       paddingRight:25
     },
     mainImageFill:{
-        width:'100%',
-        height:230,
+        transform: [{scaleX: (-1)}],
+        width:'65%',
+        height:310,
         aspectRatio:1,
         marginBottom:15,
-        marginTop:70,
+        marginTop:40,
     },
     textSubHead:{
         width:300,
         textAlign:'center',
-        marginBottom:70,
-        marginTop:40,
+        marginBottom:60,
+        marginTop:35,
 
       },
       btnActive:{

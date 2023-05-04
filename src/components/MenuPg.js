@@ -1,20 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput,ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const MenuPg = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
 
-        <ScrollView  style={{padding:15,paddingLeft:25,paddingRight:25}}>
-            <View style={{marginTop:20,flex:1/20, flexDirection:'row',justifyContent:'space-between',width:'100%'}}>
-                <Text style={{fontSize:17}}>
-                    Menu
-                </Text>
-                <Image
-                    style={styles.cartIcon}
-                    source={require('../../assets/image/shopping-cart.svg')}
-                />
-            </View>
+        <ScrollView  style={{padding:0,paddingLeft:25,paddingRight:25}}>
             <View style={styles.searchBar}>
             <Image
                 style={styles.searchLogo}
@@ -27,6 +22,27 @@ const MenuPg = () => {
                 source={require('../../assets/image/SideBarOrange.svg')}
             />
 
+            <View style={styles.menuWrapper}>
+                <View style={{flex:1}}>
+                <Image
+                style={styles.menuImg}
+                source={require('../../assets/image/menu3.png')}
+            />
+                </View>
+                <TouchableOpacity 
+                    style={styles.menuBar}
+                    onPress={() => {navigation.navigate("Desserts")}}    
+                >  
+                    <Text style={styles.menuTxt}>Desserts</Text>
+                    <Text style={styles.menuSubTxt}>155 items</Text>
+                </TouchableOpacity>
+                <View style={{flex:1}}>
+                <Image
+                    style={styles.sideArrow}
+                    source={require('../../assets/image/sideArrow.svg')}
+                />
+                </View>
+            </View>
             <View style={styles.menuWrapper}>
                 <View style={{flex:1}}>
                 <Image
@@ -65,24 +81,6 @@ const MenuPg = () => {
                 </View>
             </View>
 
-            <View style={styles.menuWrapper}>
-                <View style={{flex:1}}>
-                <Image
-                style={styles.menuImg}
-                source={require('../../assets/image/menu3.png')}
-            />
-                </View>
-                <View style={styles.menuBar}>  
-                    <Text style={styles.menuTxt}>Desserts</Text>
-                    <Text style={styles.menuSubTxt}>155 items</Text>
-                </View>
-                <View style={{flex:1}}>
-                <Image
-                    style={styles.sideArrow}
-                    source={require('../../assets/image/sideArrow.svg')}
-                />
-                </View>
-            </View>
 
             <View style={styles.menuWrapper}>
                 <View style={{flex:1}}>
@@ -104,7 +102,30 @@ const MenuPg = () => {
             </View> 
 
         </ScrollView>
+        <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:65,width:65,zIndex:222,bottom:42,left:147}}
+            onPress={() => {navigation.navigate("Home")}}    
+            >
+            </TouchableOpacity>
 
+            <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:14,}}
+            onPress={() => {navigation.navigate("Menu")}}    
+            >
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:85,}}
+            onPress={() => {navigation.navigate("Offers")}}    
+            >
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:233,}}
+            onPress={() => {navigation.navigate("Profile")}}    
+            >
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:300,}}
+            onPress={() => {navigation.navigate("More")}}    
+            >
+            </TouchableOpacity>
             <View style={{position:'fixed', bottom:0}}>
                 <Image
                 style={styles.bottomBar}
@@ -119,7 +140,7 @@ const MenuPg = () => {
     const styles = StyleSheet.create({
         container:{
             flex: 1,
-            backgroundColor: '#fff',
+            backgroundColor: '#f8f8f8',
             //   alignItems:'center',
             width:'100%',
         },
@@ -127,10 +148,9 @@ const MenuPg = () => {
         top:1,
         // padding:0,
         // margin:0,
-        width:400,
-        right:20,
+        width:410,
+        right:28,
         height:110,
-        zIndex:111,
     },
         cartIcon:{
             width:20,
@@ -206,7 +226,7 @@ const MenuPg = () => {
         },
         bgShape:{
             position:'absolute',
-            top:140,
+            top:110,
             height:400,
             width:150,
             right:240,

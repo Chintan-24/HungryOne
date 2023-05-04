@@ -1,8 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput,ScrollView } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const ItemPg = () => {
+  const navigation = useNavigation();
+
     return (
     <View style={styles.container}>
     <ScrollView  style={{padding:15,paddingLeft:25,paddingRight:25}}>
@@ -11,10 +15,7 @@ const ItemPg = () => {
             style={styles.HeaderImg}
             source={require('../../assets/image/pizza1.jpg')}
             />
-            <Image
-                style={styles.cartIcon}
-                source={require('../../assets/image/shopping-cartWhite.svg')}
-            />
+            
         </View>
         <View style={styles.HeartShape}>
             <Image
@@ -27,7 +28,7 @@ const ItemPg = () => {
             />
         </View>
         <View style={styles.itemCard}>
-            <Text style={{fontSize:20}}>
+            <Text style={{fontSize:20, marginTop:13}}>
               Margherita Pizza
             </Text>
             <View style={{flex:1, flexDirection:'row'}}>
@@ -134,6 +135,30 @@ const ItemPg = () => {
 
         </View>
     </ScrollView>
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:65,width:65,zIndex:222,bottom:42,left:147}}
+    onPress={() => {navigation.navigate("Home")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:14,}}
+    onPress={() => {navigation.navigate("Menu")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:85,}}
+    onPress={() => {navigation.navigate("Offers")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:233,}}
+    onPress={() => {navigation.navigate("Profile")}}    
+    >
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{borderRadius:'50%',position:'absolute',height:40,width:40,zIndex:224,bottom:20,left:300,}}
+    onPress={() => {navigation.navigate("More")}}    
+    >
+    </TouchableOpacity>
         <View style={{position:'fixed', bottom:0}}>
             <Image
               style={styles.bottomBar}
@@ -155,16 +180,9 @@ const styles = StyleSheet.create({
       // padding:0,
       // margin:0,
       width:410,
-      right:27,
+      right:28,
       height:110,
-      zIndex:111,
   },
-    cartIcon:{
-        width:20,
-        height:20,
-        bottom:190,
-        left:280
-    },
     HeaderImg:{
       transform: [{ rotate: '180deg'}],
       width:'130%',
@@ -183,7 +201,7 @@ const styles = StyleSheet.create({
       width:15,
       height:15,
       marginRight:5,
-      marginTop:5
+      marginTop:7
     },
     smallHead:{
       fontWeight:700,
@@ -314,7 +332,7 @@ const styles = StyleSheet.create({
   heartFilled:{
     height:60,
     width:60,
-    top:150,
+    top:152,
     left:250
   },
   heartUnfilled:{
