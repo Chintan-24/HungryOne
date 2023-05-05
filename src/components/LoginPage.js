@@ -2,15 +2,43 @@ import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image,TextInput, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native';
+import { useValidation } from 'react-simple-form-validator';
+import { useState } from 'react';
 
 const LoginPage = () => {
+    
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+
+    const { isFieldInError, getErrorsInField, isFormValid } = useValidation({
+        fieldsRules: {
+          email: { email: true },
+          name: { required: true }
+        },
+        state: { email, name }
+      });
 
     const navigation = useNavigation();
 
     return (
         <ScrollView>
-
+         {/* <form>
+        <input
+                id="email"
+                type="text"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+            />
+        <input
+                id="name"
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+        <form>
+                value={name}
+            />
+        </form> */}
         <View style={styles.container}>
+
             <Text style={styles.heading}>
                 Login
             </Text>

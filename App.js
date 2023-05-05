@@ -84,6 +84,7 @@ export default function App() {
         />
         <Stack.Screen name="Welcome1" component={WelcomeSlider1}
             options={{
+            headerLeft: ()=> null,
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
@@ -94,6 +95,7 @@ export default function App() {
         />
         <Stack.Screen name="Welcome2" component={WelcomeSlider2}
             options={{
+            headerLeft: ()=> null,
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
@@ -104,6 +106,7 @@ export default function App() {
         />
         <Stack.Screen name="Welcome3" component={WelcomeSlider3}
             options={{
+            headerLeft: ()=> null,
             headerStyle: {
               backgroundColor: '#ffffff00',
           },
@@ -115,6 +118,7 @@ export default function App() {
         <Stack.Screen name="Home" component={MegaHome}
             options={ ({navigation}) => 
             ({
+            headerLeft: ()=> null,
             headerRight: () => (
             <TouchableOpacity 
               onPress={() => {navigation.navigate('Orders')}}>
