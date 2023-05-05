@@ -28,7 +28,7 @@ const MainPage = ({}) => {
         </Text>
         
         <Text style={styles.textSubHead1}>
-          FOOD DELIEVERY
+          FOOD DELIVERY 
         </Text>
 
         <Text style={styles.textSubHead}>
